@@ -6,7 +6,7 @@ import UsersRepository from '../../users.repository';
 export class UsersService {
     constructor(private readonly usersRepository: UsersRepository) { }
 
-    getPosts() {
+    getUsers() {
         return this.usersRepository.getAll();
     }
 
@@ -14,12 +14,12 @@ export class UsersService {
         return this.usersRepository.getById(id);
     }
 
-    createUser(postData: UserDto) {
-        return this.usersRepository.create(postData);
+    createUser(userData: UserDto) {
+        return this.usersRepository.create(userData);
     }
 
-    updateUser(id: number, postData: UserDto) {
-        return this.usersRepository.update(id, postData);
+    updateUser(id: number, userData: UserDto) {
+        return this.usersRepository.update(id, userData);
     }
 
     deleteUser(id: number) {

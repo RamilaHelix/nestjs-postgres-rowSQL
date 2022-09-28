@@ -1,11 +1,11 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import DatabaseService from '../database/database.service';
-import UserModel from './models/user.model';
 import UserDto from './models/userDto.model';
 
 @Injectable()
 class UsersRepository {
     constructor(private readonly databaseService: DatabaseService) { }
+
 
     async getAll() {
         const databaseResponse = await this.databaseService.runQuery(`
